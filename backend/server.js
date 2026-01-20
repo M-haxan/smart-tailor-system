@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
+const userRoutes = require('./routs/userRoutes'); // 1. File Import ki
 
 // 1. Config Load karein
 dotenv.config();
@@ -20,7 +21,7 @@ app.use(express.json());   // JSON data parhne ki taqat do
 app.get('/', (req, res) => {
     res.send('API is Running... Smart Tailor Backend 🚀');
 });
-
+app.use('/api/users', userRoutes);
 // 6. Server Start karein
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
