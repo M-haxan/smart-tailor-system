@@ -2,7 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
-const userRoutes = require('./routs/userRoutes'); // 1. File Import ki
+const userRoutes = require('./routes/userRoutes'); // 1. File Import ki
+const customerRoutes = require('./routes/customerRoutes');
+
 
 // 1. Config Load karein
 dotenv.config();
@@ -16,7 +18,8 @@ const app = express();
 // 4. Middlewares (Security & JSON Parsing)
 app.use(cors());           // Frontend ko access do
 app.use(express.json());   // JSON data parhne ki taqat do
-
+// Neeche app.use mein
+app.use('/api/customers', customerRoutes);
 // 5. Basic Route (Checking ke liye)
 app.get('/', (req, res) => {
     res.send('API is Running... Smart Tailor Backend 🚀');
