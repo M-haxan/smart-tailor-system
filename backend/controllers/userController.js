@@ -1,6 +1,5 @@
 const User = require('../models/User'); // Model mangwaya taake DB se baat kar saken
 const generateToken = require('../utils/generateToken');
-
 // @desc    Register a new user (Admin/Worker)
 // @route   POST /api/users/register
 // @access  Public (Filhal public hai, baad mein admin-only kar denge)
@@ -48,10 +47,9 @@ const registerUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// login function bhi yahan add kar dete hain
+// login controller
 const authUser = async (req, res) => {
   const { phone, password } = req.body;
-
   // 1. User dhoondo
   const user = await User.findOne({ phone });
 

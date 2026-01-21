@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const customerSchema = new mongoose.Schema({
     // 1. Basic Identity
     name: {

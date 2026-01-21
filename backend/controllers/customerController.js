@@ -35,12 +35,12 @@ const searchCustomers = async (req, res) => {
     // URL se search word nikalo (e.g., ?search=0300)
     const keyword = req.query.search
       ? {
-          $or: [
-            // Regex ka matlab: Milta julta dhoondo ('i' means case insensitive - Ali/ali same hai)
-            { name: { $regex: req.query.search, $options: 'i' } },
-            { phone: { $regex: req.query.search, $options: 'i' } },
-          ],
-        }
+        $or: [
+          // Regex ka matlab: Milta julta dhoondo ('i' means case insensitive - Ali/ali same hai)
+          { name: { $regex: req.query.search, $options: 'i' } },
+          { phone: { $regex: req.query.search, $options: 'i' } },
+        ],
+      }
       : {};
 
     // DB mein dhoondo aur Newest pehle dikhao
