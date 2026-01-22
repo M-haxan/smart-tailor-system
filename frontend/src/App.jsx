@@ -1,14 +1,15 @@
-
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AuthPage from './pages/AuthPage'; // Path check kar lena
 
 function App() {
-  
-
   return (
-    <>
-      <div className="text-3xl font-bold underline">  Hello Tailwind CSS!</div>
-    </>
-  )
+    <Routes>
+      {/* Login Page ko default route ('/') bana diya */}
+      <Route path="/" element={<AuthPage />} />
+      <Route path="/login" element={<AuthPage />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
