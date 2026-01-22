@@ -11,7 +11,7 @@ const measurementSchema = new mongoose.Schema({
   // Is bunyad par hum frontend par fields dikhayenge
   clothType: {
     type: String,
-    enum: ['Shalwar Kameez', 'Pant Coat', 'Waistcoat', 'Kurta Pajama'],
+    // enum: ['Shalwar Kameez', 'Pant Coat', 'Waistcoat', 'Kurta Pajama'],
     required: true
   },
 

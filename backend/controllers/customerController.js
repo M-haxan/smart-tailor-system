@@ -53,4 +53,40 @@ const searchCustomers = async (req, res) => {
   }
 };
 
-module.exports = { addCustomer, searchCustomers };
+// @route   GET /api/customers/:id/ledger
+const getCustomerLedger = async (req, res) => {
+  try {
+    const customerId = req.params.id;
+
+    // 1. Is customer k saray orders nikalo
+    const orders = await Order.find({ customer: customerId }).sort({ createdAt: -1 });
+
+    // 2. Calculation (Maths) 🧮
+    // Hum loop laga kar check karenge k total kitne suits hain aur udhar kitna hai
+    
+    let totalSuits = 0;
+    let totalSpent = 0;   // Aaj tak kitne ka kaam karwaya
+    let totalPending = 0; // Kitna Udhar baqi hai
+
+    orders.forEach(order => {
+      totalSuits += order.quantity;       // Suits ginte jao
+      totalSpent += order.amount.total;   // Total bill ginte jao
+      totalPending += order.amount.balance; // Sirf baqaya (Udhar) ginte jao
+    });
+
+    // 3. Response Bhejo
+    res.json({
+      summary: {
+        totalSuits,
+        totalSpent,
+        totalPending, // <--- Ye wo figure hai jo Master Sahab ko chahiye (RED COLOR MEIN)
+      },
+      orders: orders // Neeche poori list bhi dikha denge detail k liye
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { addCustomer, searchCustomers, getCustomerLedger };

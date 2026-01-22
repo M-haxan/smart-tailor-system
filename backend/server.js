@@ -4,7 +4,10 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes'); // 1. File Import ki
 const customerRoutes = require('./routes/customerRoutes');
-
+const measurementRoutes = require('./routes/measurementRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const expenseRoutes = require('./routes/expenseRoutes');
 
 // 1. Config Load karein
 dotenv.config();
@@ -25,6 +28,10 @@ app.get('/', (req, res) => {
     res.send('API is Running... Smart Tailor Backend 🚀');
 });
 app.use('/api/users', userRoutes);
+app.use('/api/measurements', measurementRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/expenses', expenseRoutes);
 // 6. Server Start karein
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
