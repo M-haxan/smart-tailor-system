@@ -209,9 +209,9 @@ const AuthPage = () => {
       >
         {/* Background Image: Ensure correct path or use URL */}
         <img 
-            src="logo.png" // Changed to URL for better display
+            src="image.png" // Changed to URL for better display
             alt="Tailor Working" 
-            className="absolute inset-0 w-full h-full object-cover opacity-90"
+            className="absolute inset-0 w-200 h-150 object-cover opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
         <div className="absolute bottom-12 left-12 text-white z-10 max-w-md">
