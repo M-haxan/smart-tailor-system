@@ -11,6 +11,13 @@ import Dashboard from './pages/Dashbord';
 import Customers from './pages/Customers';
 import Measurements from './pages/Measurements';          // ✅ Naya Page
 import MeasurementSettings from './pages/MeasurementSettings'; // ✅ Naya Page
+import Users from './pages/Users';
+import Orders from './pages/Order';
+import Invoices from './pages/Invoices';
+import Reports from './pages/Reports';
+import ConfigClothType from './pages/ConfigClothType';
+import ConfigWhatsApp from './pages/ConfigWhatsApp';
+import ConfigKarigarRates from './pages/ConfigKarigarRates';
 
 function App() {
   return (
@@ -30,20 +37,24 @@ function App() {
             
             {/* Business Routes */}
             <Route path="customers" element={<Customers />} />
+            <Route path="users" element={<Users />} />
             <Route path="measurements" element={<Measurements />} /> 
             
             {/* Settings Route */}
             <Route path="settings" element={<MeasurementSettings />} /> 
 
             {/* Future Routes (Jo abhi banne hain) */}
-            <Route path="orders" element={<div className='p-10 text-xl'>Orders Page Coming Soon</div>} />
+            <Route path="orders" element={<Orders />} />
             <Route path="calendar" element={<div className='p-10 text-xl'>Calendar Coming Soon</div>} />
-            <Route path="invoices" element={<div className='p-10 text-xl'>Invoices Coming Soon</div>} />
+            <Route path="invoices" element={<Invoices />} />
             
             {/* Reports */}
-            <Route path="reports/order" element={<div className='p-10 text-xl'>Order Report Coming Soon</div>} />
-            <Route path="reports/income" element={<div className='p-10 text-xl'>Income Report Coming Soon</div>} />
-        
+            <Route path="reports" element={<Reports />} />
+            {/* <Route path="reports/income" element={<div className='p-10 text-xl'>Income Report Coming Soon</div>} /> */}
+        <Route path="/config/cloth-type" element={<ConfigClothType />} />
+<Route path="/config/whatsapp" element={<ConfigWhatsApp />} />
+<Route path="/config/karigar-rates" element={<ConfigKarigarRates />} />
+
         </Route>
 
       </Routes>

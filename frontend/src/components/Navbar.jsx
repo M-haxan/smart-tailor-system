@@ -6,8 +6,8 @@ const Navbar = ({ toggleSidebar }) => {
   const navigate = useNavigate(); // ✅ Hook initialize kiya
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white border-b border-gray-100 shadow-sm">
-      <div className="flex h-16 items-center justify-between px-4 lg:px-6">
+    <header className="sticky top-0 z-40 w-full bg-white ">
+      <div className="flex h-14 items-center justify-between px-4 lg:px-6">
         
         {/* LEFT: TOGGLE BUTTON */}
         <div className="flex items-center">
@@ -15,7 +15,7 @@ const Navbar = ({ toggleSidebar }) => {
                 onClick={toggleSidebar}
                 className="p-2 rounded-lg bg-teal-50 text-[#258C78] hover:bg-teal-100 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/20"
             >
-                <AlignJustify size={24} strokeWidth={2.5} />
+                <AlignJustify size={20} strokeWidth={2.5} />
             </button>
         </div>
 
