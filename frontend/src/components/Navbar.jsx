@@ -29,7 +29,7 @@ const Navbar = ({ toggleSidebar }) => {
 
             {/* ✅ SETTINGS BUTTON (Ab ye kaam karega) */}
             <button 
-                onClick={() => navigate('/settings')} // Click par page badal jayega
+                // onClick={() => navigate('/settings')} // Click par page badal jayega
                 className="p-2.5 rounded-lg bg-teal-50 text-[#258C78] hover:bg-teal-100 transition-colors"
                 title="Measurement Settings"
             >

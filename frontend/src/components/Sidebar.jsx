@@ -87,6 +87,9 @@ const Sidebar = ({ closeMobileMenu }) => {
                     {/* <NavLink to="/roles" className="block px-4 py-2 text-[13px] text-gray-500 hover:text-[#258C78]" onClick={handleLinkClick}>
                         Roles
                     </NavLink> */}
+                    <NavLink to="/karigars" className="block px-4 py-2 text-[13px] text-gray-500 hover:text-[#258C78]" onClick={handleLinkClick}>
+                    Karigar Hisab & Work
+                </NavLink>
                 </div>
             )}
         </div>

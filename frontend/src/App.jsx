@@ -18,6 +18,7 @@ import Reports from './pages/Reports';
 import ConfigClothType from './pages/ConfigClothType';
 import ConfigWhatsApp from './pages/ConfigWhatsApp';
 import ConfigKarigarRates from './pages/ConfigKarigarRates';
+import KarigarManager from './pages/KarigarManager';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="customers" element={<Customers />} />
             <Route path="users" element={<Users />} />
             <Route path="measurements" element={<Measurements />} /> 
+            <Route path="/karigars" element={<KarigarManager />} />
             
             {/* Settings Route */}
             <Route path="settings" element={<MeasurementSettings />} /> 

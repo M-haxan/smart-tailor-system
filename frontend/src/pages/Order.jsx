@@ -18,7 +18,6 @@ const Orders = () => {
     { id: '#ODR-00031', customer: 'Jack smith', orderDate: '2026-01-26', deadline: '2026-01-26', type: 'Suit', status: 'Delivered', invoice: '#INV-00031' },
     { id: '#ODR-00030', customer: 'Ali Khan', orderDate: '2025-12-29', deadline: '2026-01-01', type: 'Waistcoat', status: 'Processing', invoice: '#INV-00030' },
   ];
-
   // Logic to filter orders based on Tabs
   const getFilteredOrders = () => {
     const today = '2026-01-26'; // Assume today is 26th Jan for demo
@@ -26,7 +25,6 @@ const Orders = () => {
     if (activeTab === 'today_delivery') return allOrders.filter(o => o.deadline === today);
     return allOrders;
   };
-
   const filteredOrders = getFilteredOrders();
 
   // --- FORM LOGIC ---
