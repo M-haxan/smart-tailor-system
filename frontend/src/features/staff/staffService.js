@@ -1,27 +1,44 @@
-import API from '../../api';
+import axios from 'axios';
 
-// 1. Create New Staff (Register)
-const createStaff = async (userData) => {
-  const response = await API.post('/users', userData);
+const API_URL = '/api/users/';
+
+// 1. Get All Users (Staff)
+const getStaff = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`, // Token bhejna zaroori hai
+    },
+  };
+  const response = await axios.get(API_URL, config);
   return response.data;
 };
 
-// 2. Get All Staff
-const getStaff = async () => {
-  const response = await API.get('/users');
+// 2. Create New User
+const createStaff = async (userData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.post(API_URL, userData, config);
   return response.data;
 };
 
-// 3. Delete Staff
-const deleteStaff = async (id) => {
-  const response = await API.delete(`/users/${id}`);
+// 3. Delete User
+const deleteStaff = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.delete(API_URL + id, config);
   return response.data;
 };
 
 const staffService = {
-  createStaff,
   getStaff,
-  deleteStaff,
+  createStaff,
+  deleteStaff
 };
 
 export default staffService;
